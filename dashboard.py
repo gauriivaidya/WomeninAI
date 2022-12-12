@@ -23,7 +23,7 @@ left_column1, right_column1 = st.columns([1, 1])
 options = ['All', 'Ukrainians', 'All other refugees'] 
 select1 = left_column1.selectbox("Choose the month", options)
 
-df_refugees = df_refugees1.groupby('Month', as_index=False).sum()
+df_refugees = df_refugees1.groupby('Month', as_index=False, on_bad_lines='skip').sum()
 
 if select1 == 'All':
     trace1 = px.line(x = df_refugees['Month'], y = df_refugees['All'], labels={'x':'Months', 'y':'All refugees'})
@@ -42,7 +42,7 @@ elif select1 == 'All other refugees':
 with open("https://github.com/gauriivaidya/WomeninAI/blob/main/ireland.geojson") as response:
     geo = json.load(response)
 
-df_counties = pd.read_csv('https://github.com/gauriivaidya/WomeninAI/blob/main/counties.csv')
+df_counties = pd.read_csv('https://github.com/gauriivaidya/WomeninAI/blob/main/counties.csv', on_bad_lines='skip')
 
 # Add title and header
 st.header("Division of Refugees across counties in Ireland")
@@ -77,7 +77,7 @@ st.plotly_chart(fig)
 
 ###############Stack Bar Graph Map############################
 
-df_months = pd.read_csv('https://github.com/gauriivaidya/WomeninAI/blob/main/chart2.csv')
+df_months = pd.read_csv('https://github.com/gauriivaidya/WomeninAI/blob/main/chart2.csv', on_bad_lines='skip')
 
 st.header("Division across age group and gender")
 left_column, right_column = st.columns([1, 1])
@@ -124,7 +124,7 @@ else:
 
 st.header("Relationship status of refugees in Ireland")
 
-df_pie = pd.read_csv('https://github.com/gauriivaidya/WomeninAI/blob/main/chart4.csv')
+df_pie = pd.read_csv('https://github.com/gauriivaidya/WomeninAI/blob/main/chart4.csv', on_bad_lines='skip')
 
 left_column2, right_column2 = st.columns([1, 1])
 
