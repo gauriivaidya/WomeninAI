@@ -23,7 +23,7 @@ left_column1, right_column1 = st.columns([1, 1])
 options = ['All', 'Ukrainians', 'All other refugees'] 
 select1 = left_column1.selectbox("Choose the month", options)
 
-df_refugees = df_refugees1.groupby('Month', as_index=False).sum()
+df_refugees = df_refugees1.groupby('Month').sum()
 
 if select1 == 'All':
     trace1 = px.line(x = df_refugees['Month'], y = df_refugees['All'], labels={'x':'Months', 'y':'All refugees'})
