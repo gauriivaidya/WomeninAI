@@ -39,7 +39,7 @@ elif select1 == 'All other refugees':
 ###############Choropleth Map############################
 
 
-with open("Downloads/ireland.geojson") as response:
+with open("https://github.com/gauriivaidya/WomeninAI/blob/main/ireland.geojson") as response:
     geo = json.load(response)
 
 df_counties = pd.read_csv('https://github.com/gauriivaidya/WomeninAI/blob/main/counties.csv')
