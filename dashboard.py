@@ -16,7 +16,7 @@ st.title("Towards AI for humanitarian actions: exploring data on populations dis
 
 
 st.header("Monthwise distribution of refugees arriving in Ireland")
-df_refugees1 = pd.read_csv('https://github.com/gauriivaidya/WomeninAI/blob/main/chart33.csv', on_bad_lines='skip')
+df_refugees1 = pd.read_csv('chart33.csv', on_bad_lines='skip')
 
 left_column1, right_column1 = st.columns([1, 1])
 
@@ -43,10 +43,10 @@ elif select1 == 'All other refugees':
 ###############Choropleth Map############################
 
 
-with open("https://github.com/gauriivaidya/WomeninAI/blob/main/ireland.geojson") as response:
+with open("ireland.geojson") as response:
     geo = json.load(response)
 
-df_counties = pd.read_csv('https://github.com/gauriivaidya/WomeninAI/blob/main/counties.csv', on_bad_lines='skip')
+df_counties = pd.read_csv('counties.csv', on_bad_lines='skip')
 
 # Add title and header
 st.header("Division of Refugees across counties in Ireland")
@@ -81,7 +81,7 @@ st.plotly_chart(fig)
 
 ###############Stack Bar Graph Map############################
 
-df_months = pd.read_csv('https://github.com/gauriivaidya/WomeninAI/blob/main/chart2.csv', on_bad_lines='skip')
+df_months = pd.read_csv('chart2.csv', on_bad_lines='skip')
 
 st.header("Division across age group and gender")
 left_column, right_column = st.columns([1, 1])
@@ -128,7 +128,7 @@ else:
 
 st.header("Relationship status of refugees in Ireland")
 
-df_pie = pd.read_csv('https://github.com/gauriivaidya/WomeninAI/blob/main/chart4.csv', on_bad_lines='skip')
+df_pie = pd.read_csv('chart4.csv', on_bad_lines='skip')
 
 left_column2, right_column2 = st.columns([1, 1])
 
