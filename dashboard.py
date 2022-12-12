@@ -21,7 +21,7 @@ df_refugees1 = pd.read_csv('chart33.csv', on_bad_lines='skip')
 left_column1, right_column1 = st.columns([1, 1])
 
 options = ['All', 'Ukrainians', 'All other refugees'] 
-select1 = left_column1.selectbox("Choose the month", options)
+select1 = left_column1.selectbox("Choose the population type", options)
 
 
 df_refugees = df_refugees1.groupby('Month').sum().reset_index()
