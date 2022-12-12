@@ -23,6 +23,8 @@ left_column1, right_column1 = st.columns([1, 1])
 options = ['All', 'Ukrainians', 'All other refugees'] 
 select1 = left_column1.selectbox("Choose the month", options)
 
+df_refugees1.columns = df_refugees1.columns.str.strip()
+
 df_refugees = df_refugees1.groupby('Month').sum()
 
 if select1 == 'All':
