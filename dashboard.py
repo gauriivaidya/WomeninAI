@@ -16,7 +16,7 @@ st.title("Towards AI for humanitarian actions: exploring data on populations dis
 
 
 st.header("Monthwise distribution of refugees arriving in Ireland")
-df_refugees1 = pd.read_csv('https://github.com/gauriivaidya/WomeninAI/blob/main/chart33.csv')
+df_refugees1 = pd.read_csv('https://github.com/gauriivaidya/WomeninAI/blob/main/chart33.csv', on_bad_lines='skip')
 
 left_column1, right_column1 = st.columns([1, 1])
 
