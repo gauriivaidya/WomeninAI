@@ -16,7 +16,7 @@ st.title("Towards AI for humanitarian actions: exploring data on populations dis
 
 
 st.header("Monthwise distribution of refugees arriving in Ireland")
-df_refugees1 = pd.read_csv('Downloads/chart33.csv')
+df_refugees1 = pd.read_csv('https://github.com/gauriivaidya/WomeninAI/blob/main/chart33.csv')
 
 left_column1, right_column1 = st.columns([1, 1])
 
@@ -42,7 +42,7 @@ elif select1 == 'All other refugees':
 with open("Downloads/ireland.geojson") as response:
     geo = json.load(response)
 
-df_counties = pd.read_csv('Downloads/counties.csv')
+df_counties = pd.read_csv('https://github.com/gauriivaidya/WomeninAI/blob/main/counties.csv')
 
 # Add title and header
 st.header("Division of Refugees across counties in Ireland")
@@ -77,7 +77,7 @@ st.plotly_chart(fig)
 
 ###############Stack Bar Graph Map############################
 
-df_months = pd.read_csv('Downloads/chart2.csv')
+df_months = pd.read_csv('https://github.com/gauriivaidya/WomeninAI/blob/main/chart2.csv')
 
 st.header("Division across age group and gender")
 left_column, right_column = st.columns([1, 1])
@@ -124,7 +124,7 @@ else:
 
 st.header("Relationship status of refugees in Ireland")
 
-df_pie = pd.read_csv('Downloads/chart4.csv')
+df_pie = pd.read_csv('https://github.com/gauriivaidya/WomeninAI/blob/main/chart4.csv')
 
 left_column2, right_column2 = st.columns([1, 1])
 
