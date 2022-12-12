@@ -24,8 +24,7 @@ options = ['All', 'Ukrainians', 'All other refugees']
 select1 = left_column1.selectbox("Choose the month", options)
 
 
-df_refugees = df_refugees1.groupby('Month').sum()
-df_refugees.columns = df_refugees.columns.str.strip()
+df_refugees = df_refugees1.groupby('Month').sum().reset_index()
 
 # encoding='utf-8-sig', sep='\s*,\s*', engine='python'
 
